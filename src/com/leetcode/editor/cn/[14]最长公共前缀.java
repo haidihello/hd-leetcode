@@ -36,12 +36,27 @@ package com.leetcode.editor.cn;
 class LongestCommonPrefix{
 	public static void main(String[] args) {
 		Solution solution = new LongestCommonPrefix().new Solution();
+		String[] strs = {"abcd","abab","anbacdb"};
+		System.out.println(solution.longestCommonPrefix(strs));
 	}
 	//leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public String longestCommonPrefix(String[] strs) {
 
-    }
+		if (strs.length<=0 || strs ==null) {
+			return "";
+		}
+		String res = strs[0];
+		int i = 0;
+		while (i < strs.length) {
+			while (strs[i].indexOf(res) != 0) {
+				res = res.substring(0, res.length() - 1);
+			}
+			i++;
+		}
+		return res;
+	}
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
