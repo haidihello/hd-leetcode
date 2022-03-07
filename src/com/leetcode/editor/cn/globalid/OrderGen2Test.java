@@ -1,4 +1,4 @@
-package com.leetcode.editor.cn;
+package com.leetcode.editor.cn.globalid;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -31,8 +31,8 @@ public class OrderGen2Test {
     public static String generateOrderNo() {
         String id = nextId();
         LocalDateTime dataTime = LocalDateTime.now(ZONE_ID);
-//        return dataTime.format(DF_FMT_PREFIX) + getLocalIpSuffix() + SEQ.getAndIncrement();
-        return id + getLocalIpSuffix();
+        return dataTime.format(DF_FMT_PREFIX) + getLocalIpSuffix() + SEQ.getAndIncrement();
+       // return id + getLocalIpSuffix();
 
     }
 
@@ -113,16 +113,16 @@ public class OrderGen2Test {
     public static void main(String[] args) {
         Long start = System.currentTimeMillis();
         List orderNos = Collections.synchronizedList(new ArrayList());
-        IntStream.range(0, 100000).parallel().forEach(i -> {
+        IntStream.range(0, 1000000).parallel().forEach(i -> {
             orderNos.add(generateOrderNo());
-            System.out.println(generateOrderNo());
         });
+
         List filterOrderNos = (List) orderNos.stream().distinct().collect(Collectors.toList());
         System.out.println("订单样例：" + orderNos.get(22));
         System.out.println("生成订单数：" + orderNos.size());
         System.out.println("过滤重复后订单数：" + filterOrderNos.size());
         System.out.println("重复订单数：" + (orderNos.size() - filterOrderNos.size()));
-        System.out.println("总耗时" + String.valueOf(System.currentTimeMillis() - start));
+        System.out.println("总耗时" + (System.currentTimeMillis() - start));
     }
 }/**
  * 订单样例：20082115575546011022  生成订单数：8000  过滤重复后订单数：8000  重复订单数：0
