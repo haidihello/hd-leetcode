@@ -30,32 +30,35 @@ package com.leetcode.editor.cn;
 // 0 <= x <= 231 - 1 
 // 
 // Related Topics 数学 二分查找 
-// 👍 833 👎 0
+// 👍 920 👎 0
 
 /**
 *@author haidi
-*2021-12-08 13:11:06
+*2022-03-11 13:11:35
 */
-class Sqrtx2{
+class Sqrtx{
 	public static void main(String[] args) {
-		Solution solution = new Sqrtx2().new Solution();
+		Solution solution = new Sqrtx().new Solution();
 		System.out.println(solution.mySqrt(8));
 	}
 	//leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+		int s;
     public int mySqrt(int x) {
-		int l = 0, r = x, res = 0;
-		while (l <= r){
-			int mid = (l + r) / 2;
-			if ((long)mid * mid <= x){
-				res = mid;
-				l = mid + 1;
-			}else{
-				r = mid - 1;
+		s = x;
+		if (x==0) return 0;
+		return (int) (sqrts(x));
+
+    }
+
+		public double sqrts(double x) {
+			double res = (x + s / x) / 2;
+			if (res == x) {
+				return x;
+			} else {
+				return sqrts(res);
 			}
 		}
-		return res;
-    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

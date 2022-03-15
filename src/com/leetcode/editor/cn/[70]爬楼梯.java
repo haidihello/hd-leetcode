@@ -36,21 +36,45 @@ package com.leetcode.editor.cn;
 // 👍 2126 👎 0
 
 /**
-*@author haidi
-*2022-01-19 15:03:27
-*/
-class ClimbingStairs{
-	public static void main(String[] args) {
-		Solution solution = new ClimbingStairs().new Solution();
-	}
-	//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int climbStairs(int n) {
-
-    	return 1;
+ * @author haidi
+ * 2022-01-19 15:03:27
+ */
+class ClimbingStairs {
+    public static void main(String[] args) {
+        Solution solution = new ClimbingStairs().new Solution();
+		System.out.println(solution.climbStairs(10));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+//        /**
+//         * 动态规划思想
+//         * @param n
+//         * @return
+//         */
+//        public int climbStairs(int n) {
+//            if (n == 0) return 0;
+//            if (n == 1) return 1;
+//            int[] dp = new int[n + 1];
+//            dp[1] = 1;
+//            dp[2] = 2;
+//            for (int i = 3; i <= n; i++) {
+//                dp[i] = dp[i - 1] + dp[i - 2];
+//            }
+//            return dp[n];
+//        }
+
+        public int climbStairs(int n) {
+            if (n == 0) return 0;
+            int pre = 0, cur = 1;
+            for (int i = 1; i <= n; i++) {
+                cur = cur + pre;
+                pre = cur - pre;
+            }
+            return cur;
+        }
+    }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
-	
