@@ -9,36 +9,31 @@ import java.util.regex.Pattern;
 
 public class MysqlTableToPojo {
     public static void main(String[] args) {
-        String s = "CREATE TABLE `p4_merchant_temp` (\n" +
-                "  `id` int(11) NOT NULL AUTO_INCREMENT,\n" +
-                "  `mercName` varchar(255) DEFAULT NULL COMMENT '商户名称',\n" +
-                "  `mcc` varchar(255) DEFAULT NULL COMMENT 'MCC',\n" +
-                "  `province` varchar(255) DEFAULT NULL COMMENT '归属省',\n" +
-                "  `city` varchar(255) DEFAULT NULL COMMENT '归属市',\n" +
-                "  `area` varchar(255) DEFAULT NULL COMMENT '归属区',\n" +
-                "  `businessAddress` varchar(255) DEFAULT NULL COMMENT '营业地址',\n" +
-                "  `mercType` varchar(255) DEFAULT NULL COMMENT '商户性质',\n" +
-                "  `businessNumber` varchar(255) DEFAULT NULL COMMENT '营业执照号',\n" +
-                "  `registerAddress` varchar(255) DEFAULT NULL COMMENT '注册地址',\n" +
-                "  `idCardNumber` varchar(255) DEFAULT NULL COMMENT '法人证件号码',\n" +
-                "  `legalName` varchar(255) DEFAULT NULL COMMENT '法人姓名',\n" +
-                "  `bankName` varchar(255) DEFAULT NULL COMMENT '开户银行',\n" +
-                "  `accountNumber` varchar(255) DEFAULT NULL COMMENT '结算银行账号',\n" +
-                "  `accountName` varchar(255) DEFAULT NULL COMMENT '账户名称',\n" +
-                "  `bankProvince` varchar(255) DEFAULT NULL COMMENT '开户省份',\n" +
-                "  `bankCity` varchar(255) DEFAULT NULL COMMENT '开户城市',\n" +
-                "  `bankBranchName` varchar(255) DEFAULT NULL COMMENT '开户支行',\n" +
-                "  `linkNo` varchar(255) DEFAULT NULL COMMENT '网点号(联行号)',\n" +
-                "  `termNo` varchar(255) DEFAULT NULL COMMENT '终端号',\n" +
-                "  `termSerialNo` varchar(255) DEFAULT NULL COMMENT '终端序列号',\n" +
-                "  `mercReportedState` varchar(255) DEFAULT NULL COMMENT '商户报备状态',\n" +
-                "  `termReportedState` varchar(255) DEFAULT NULL COMMENT '终端报备状态',\n" +
-                "  `unionMercNum` varchar(255) DEFAULT NULL COMMENT '银联商户号',\n" +
-                "  `defaultReportedState` varchar(255) DEFAULT 'N' COMMENT '默认报备状态:N',\n" +
-                "  PRIMARY KEY (`id`),\n" +
-                "  UNIQUE KEY `un_index` (`businessNumber`) USING BTREE\n" +
-                ") ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;\n" +
-                "\n";
+        String s = "create table p4_settle_audit\n" +
+                "(\n" +
+                "   id bigint auto_increment comment '主键id'\n" +
+                "      primary key,\n" +
+                "   globalId varchar(255) not null comment '全局id-->对应出款系统的打款请求号',\n" +
+                "   orderId varchar(255) null comment '订单号',\n" +
+                "   mercNum varchar(255) not null comment '商户号',\n" +
+                "   mercName varchar(255) not null comment '商户号',\n" +
+                "   netDotNum varchar(255) null comment '网点编号',\n" +
+                "   mercSettleType varchar(255) null comment '按网点结算（BYNETDOT） / 按商户结算（BYMERC）',\n" +
+                "   source varchar(255) not null comment '结算来源  POS  QPOS  QPAY  MPOS',\n" +
+                "   settleWay varchar(255) not null comment '结算方式 TS、T0、D0、T1',\n" +
+                "   accountType varchar(255) null comment '账户类型  对公：TO_PUBLIC  对私：TO_PRIVATE',\n" +
+                "    accountName varchar(255) null comment '商户在银行的开户名',\n" +
+                "    debitCard varchar(255) not null comment '结算卡号',\n" +
+                "    bankAbbr varchar(255) null comment '开户行缩写 例如：ICBC-->对应出款系统的开户银行编号',\n" +
+                "   province varchar(255) null comment '省',\n" +
+                "   lineNum varchar(255) null comment '联行号',\n" +
+                "    settlementAmount decimal(18) not null comment '结算金额',\n" +
+                "    applyUser varchar(255) null comment '申请人',\n" +
+                "    auditUser varchar(255) null comment '审核人',\n" +
+                "    createTime datetime null comment '申请时间',\n" +
+                "   auditTime datetime null comment '审核时间'\n" +
+                ")\n" +
+                "comment '商户T1结算审核表'";
         MysqlTableToPojo(s, true, true);
     }
 
