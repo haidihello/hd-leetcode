@@ -7,6 +7,7 @@ public class StudentStreamDemo {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>(16);
         students.add(new Student("1", "张三", 18, "male", 88));
+        students.add(new Student("1", "张四", 17, "male", 88));
         students.add(new Student("2", "李四", 17, "male", 60));
         students.add(new Student("3", "王五", 18, "male", 100));
         students.add(new Student("4", "赵六", 20, "male", 10));
@@ -233,6 +234,12 @@ public class StudentStreamDemo {
         System.out.println("---------------------------joining-------------------------------");
         String joinName = students.stream().map(Student::getName).collect(Collectors.joining(", "));
         System.out.println(joinName);
+
+        //14.按字段去重
+        System.out.println("----------按字段去重----------");
+        //根据roleId去重
+        List<Student> list14 = students.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(Student::getId))), ArrayList::new));
+        System.out.println("去重后的list14"+list14);
 
     }
 }
