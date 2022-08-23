@@ -70,6 +70,11 @@ public class NewFeature {
 
 
 
+    public static void main(String[] args) {
+        String str = "2022年08月03日";
+
+        System.out.println(str.replaceAll("^[0-9]",""));
+    }
 }
 
 

@@ -1,5 +1,7 @@
 package com.leetcode.editor.newfeature;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 /**
  * @Description 学生类
  * @Author Mr.nobody
@@ -68,7 +70,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", age=" + age
-                + ", sex=" + sex + ", score=" + score + '}';
+        return ToStringBuilder.reflectionToString(this);
     }
 }

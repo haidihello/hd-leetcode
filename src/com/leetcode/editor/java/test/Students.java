@@ -9,6 +9,12 @@ public class Students implements Comparable{
     private String sex;
     private Integer age;
 
+    public Students(String name, String sex, Integer age) {
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }

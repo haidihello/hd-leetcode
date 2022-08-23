@@ -1,5 +1,7 @@
 package com.leetcode.editor.newfeature;
 
+import com.leetcode.editor.java.test.Students;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -241,5 +243,13 @@ public class StudentStreamDemo {
         List<Student> list14 = students.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(Student::getId))), ArrayList::new));
         System.out.println("去重后的list14"+list14);
 
+        //15.两个不同类型list按照同一属性取差集
+//        List<Students> listStudent = new ArrayList<>();
+//        listStudent.add(new Students("张三","male", 88));
+//        List<Students> resultList = students.stream()
+//                .filter(item -> !remitList.stream().map(e -> e.getGlobalId())
+//                        .collect(Collectors.toList()).contains(item.getGlobalId())
+//                )
+//                .collect(Collectors.toList());
     }
 }
