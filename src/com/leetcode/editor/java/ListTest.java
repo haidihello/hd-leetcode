@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * 两个 不同类型的list取差集
  * @Author: HaiDi
  * @Date: 2022/8/19 10:09
  */
