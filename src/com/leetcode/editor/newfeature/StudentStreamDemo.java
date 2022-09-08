@@ -243,7 +243,7 @@ public class StudentStreamDemo {
         List<Student> list14 = students.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(Student::getId))), ArrayList::new));
         System.out.println("去重后的list14"+list14);
 
-        //15.两个不同类型list按照同一属性取差集
+//        //15.两个不同类型list按照同一属性取差集
 //        List<Students> listStudent = new ArrayList<>();
 //        listStudent.add(new Students("张三","male", 88));
 //        List<Students> resultList = students.stream()
