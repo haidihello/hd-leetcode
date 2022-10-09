@@ -3,106 +3,14 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
-        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1371]每个元音包含偶数次的最长子字符串.java">
+        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[628]三个数的最大乘积.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[1371]每个元音包含偶数次的最长子字符串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com1371" />
-              <option name="host" value="leetcode-cn.com" />
-              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1371]每个元音包含偶数次的最长子字符串.java" />
-              <option name="titleSlug" value="find-the-longest-substring-containing-vowels-in-even-counts" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[5]最长回文子串.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[5]最长回文子串.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com5" />
-              <option name="host" value="leetcode-cn.com" />
-              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[5]最长回文子串.java" />
-              <option name="titleSlug" value="longest-palindromic-substring" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[82]删除排序链表中的重复元素 II.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[82]删除排序链表中的重复元素 II.md" />
-              <option name="frontendQuestionId" value="leetcode-cn.com82" />
-              <option name="host" value="leetcode-cn.com" />
-              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[82]删除排序链表中的重复元素 II.java" />
-              <option name="titleSlug" value="remove-duplicates-from-sorted-list-ii" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[13]罗马数字转整数.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[13]罗马数字转整数.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[14]最长公共前缀.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[14]最长公共前缀.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[1]两数之和.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[1]两数之和.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[20]有效的括号.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[20]有效的括号.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[3]无重复字符的最长子串.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[3]无重复字符的最长子串.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[7]整数反转.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[7]整数反转.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[9]回文数.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[9]回文数.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[剑指 Offer 09]用两个栈实现队列.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[剑指 Offer 09]用两个栈实现队列.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[剑指 Offer 10- I]斐波那契数列.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[剑指 Offer 10- I]斐波那契数列.java" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[1]两数之和.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/[1]两数之和.java" />
+              <option name="contentPath" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/doc/content/[628]三个数的最大乘积.md" />
+              <option name="frontendQuestionId" value="leetcode.cn628" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[628]三个数的最大乘积.java" />
+              <option name="titleSlug" value="maximum-product-of-three-numbers" />
             </LeetcodeEditor>
           </value>
         </entry>

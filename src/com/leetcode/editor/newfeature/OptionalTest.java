@@ -1,10 +1,9 @@
 package com.leetcode.editor.newfeature;
 
 import com.leetcode.editor.java.test.Personal;
-import com.leetcode.editor.java.test.Students;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +39,13 @@ public class OptionalTest {
                 .map(c -> c.getName())
                 .orElse("defelt");
         System.out.println(result);
+        System.out.println("-----------------------------");
+        students = null;
+        Optional<List<Student>> studentsOptional = Optional.ofNullable(students);
+        List<List<Student>> lists = Optional.ofNullable(students)
+                .map(Collections::singletonList)
+                .orElse(Collections.emptyList());
+        System.out.println(lists);
 
     }
 }
