@@ -3,6 +3,28 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[182]查找重复的电子邮箱.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/doc/content/[182]查找重复的电子邮箱.md" />
+              <option name="frontendQuestionId" value="leetcode.cn182" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[182]查找重复的电子邮箱.java" />
+              <option name="titleSlug" value="duplicate-emails" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[300]最长递增子序列.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/doc/content/[300]最长递增子序列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn300" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[300]最长递增子序列.java" />
+              <option name="titleSlug" value="longest-increasing-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[628]三个数的最大乘积.java">
           <value>
             <LeetcodeEditor>

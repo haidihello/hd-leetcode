@@ -22,5 +22,7 @@
     <orderEntry type="library" name="log4j" level="project" />
     <orderEntry type="library" name="alibaba.fastjson2" level="project" />
     <orderEntry type="library" name="commons.io" level="project" />
+    <orderEntry type="library" name="google.code.gson" level="project" />
+    <orderEntry type="library" name="projectlombok.lombok" level="project" />
   </component>
 </module>
