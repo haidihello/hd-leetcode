@@ -7,6 +7,8 @@ package com.leetcode.editor.java.test;
 public class EqualsTes {
     public static void main(String[] args) {
         String s1 = new String("123");
+        String s11 = "123";
+        String s22 = "234";
         String s2 = new String("hello")+new String("world");
         String s3 = "1234"+"567";
         System.out.println(s1.intern());

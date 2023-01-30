@@ -7,12 +7,17 @@ import org.junit.Test;
  * @Date: 2022/11/2 13:02
  */
 
-public class B {
+public class B extends A{
     public A a;
 
     @Test
     public void find() {
 
         a.A2();
+    }
+
+    @Override
+    void a1() {
+
     }
 }

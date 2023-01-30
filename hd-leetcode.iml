@@ -24,5 +24,6 @@
     <orderEntry type="library" name="commons.io" level="project" />
     <orderEntry type="library" name="google.code.gson" level="project" />
     <orderEntry type="library" name="projectlombok.lombok" level="project" />
+    <orderEntry type="library" name="springframework.spring" level="project" />
   </component>
 </module>

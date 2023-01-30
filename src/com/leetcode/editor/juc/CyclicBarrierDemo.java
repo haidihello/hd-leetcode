@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
         // 循环屏障
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(11, () -> System.out.println("计数器为0了"));
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () -> System.out.println("计数器为0了"));
         // 创建线程池
         ExecutorService service = Executors.newFixedThreadPool(10);
 

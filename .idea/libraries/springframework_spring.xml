@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="springframework.spring" type="repository">
+    <properties maven-id="org.springframework:spring:1.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

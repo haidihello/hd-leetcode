@@ -43,6 +43,7 @@ class ClimbingStairs {
     public static void main(String[] args) {
         Solution solution = new ClimbingStairs().new Solution();
 		System.out.println(solution.climbStairs(10));
+
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
