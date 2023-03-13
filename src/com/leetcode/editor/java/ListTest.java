@@ -40,6 +40,7 @@ public class ListTest {
 
 
 //        list.remove(0);
+        list.addAll(null);
         System.out.println(list.size());
     }
 }

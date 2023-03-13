@@ -1,9 +1,15 @@
 //package com.leetcode.editor.java.daili.jdk;
 //
-//@slf4j
+//import lombok.extern.slf4j.Slf4j;
+//
+//import java.util.logging.Logger;
+//
+//@Slf4j
 //public class JdkProxyDemoServiceImpl implements JdkProxyDemoService {
-//        @Override
+//
+//
+//    @Override
 //        public void queryTrs() {
-//            log.info("业务方法执行...");
+//
 //        }
 //}

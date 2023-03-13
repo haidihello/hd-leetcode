@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class CountDownLatchDemo {
     public static void main(String[] args) throws InterruptedException {
         // 创建计算器
-        CountDownLatch countDownLatch = new CountDownLatch(7);
+        CountDownLatch countDownLatch = new CountDownLatch(5);
         // 创建线程池
         ExecutorService service = Executors.newFixedThreadPool(5);
         // 创建新线程执行任务

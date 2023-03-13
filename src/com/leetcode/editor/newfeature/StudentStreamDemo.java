@@ -20,6 +20,11 @@ public class StudentStreamDemo {
         students.add(new Student("9", "小红", 22, "female", 95));
         students.add(new Student("10", "小张", 25, "male", 90));
 
+        //取出name属性返回List<String>
+        List<String> nameList = students.stream()
+                .map(Student::getName)
+                .collect(Collectors.toList());
+
         // 1.遍历forEach
         System.out.println("---------------------------forEach-------------------------------");
         students.stream().forEach(System.out::println);
