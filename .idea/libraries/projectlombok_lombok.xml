@@ -6,7 +6,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/lombok-1.18.20-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lombok-1.18.20-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
