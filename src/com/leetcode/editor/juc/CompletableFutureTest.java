@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -11,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
  * @Author: HaiDi
  * @Date: 2022/10/9 15:29
  */
-public class CompletableFuture {
+public class CompletableFutureTest {
     public static void main(String[] args) throws InterruptedException {
         List<String> checkList = new ArrayList();
         checkList.add("1");
@@ -22,7 +23,7 @@ public class CompletableFuture {
         StringBuffer sb = new StringBuffer();
         CountDownLatch countDownLatch = new CountDownLatch(checkList.size());
         for (String check : checkList) {
-            java.util.concurrent.CompletableFuture<String> completableFuture = java.util.concurrent.CompletableFuture.supplyAsync(() -> {
+            CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
                 return queryHistoryAndUpdateCheck(check);
             }).whenComplete((res, throwable) -> {
                 countDownLatch.countDown();
@@ -34,6 +35,8 @@ public class CompletableFuture {
         countDownLatch.await();
         System.out.println("全部执行结束");
         System.out.println("sb:" + sb);
+        CompletableFuture.runAsync(() -> {
+        });
 
 
     }
