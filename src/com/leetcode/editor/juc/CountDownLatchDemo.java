@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * 如果计数器和线程数不相等会持续等待
  */
 public class CountDownLatchDemo {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         // 创建计算器
         CountDownLatch countDownLatch = new CountDownLatch(5);
         // 创建线程池
@@ -35,7 +35,13 @@ public class CountDownLatchDemo {
             });
         }
 
-        countDownLatch.await();
+        try {
+            countDownLatch.await();
+            countDownLatch.await(4,TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("比赛结果宣布！");
+        service.shutdown();
     }
 }

@@ -1,55 +1,51 @@
 package com.leetcode.editor.juc;
 
-import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.*;
 
 /**
- * 异步并获取返回值
  * @Author: HaiDi
- * @Date: 2022/10/9 15:29
+ * @Date: 2023/4/17 17:45
  */
 public class CompletableFutureTest {
-    public static void main(String[] args) throws InterruptedException {
-        List<String> checkList = new ArrayList();
-        checkList.add("1");
-        checkList.add("2");
-        checkList.add("3");
-        checkList.add("4");
-        checkList.add("5");
-        StringBuffer sb = new StringBuffer();
-        CountDownLatch countDownLatch = new CountDownLatch(checkList.size());
-        for (String check : checkList) {
-            CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
-                return queryHistoryAndUpdateCheck(check);
-            }).whenComplete((res, throwable) -> {
-                countDownLatch.countDown();
-                if (StringUtils.isNotBlank(res)) {
-                    sb.append(res);
+    public static void main(String[] args) {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(
+                5, 5, 30,
+                TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
+        for (int i = 0; i < 5; i++) {
+            CompletableFuture future = CompletableFuture.runAsync(() -> {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-            });
+                System.out.println(Thread.currentThread().getName());
+
+            }, executor);
         }
-        countDownLatch.await();
-        System.out.println("全部执行结束");
-        System.out.println("sb:" + sb);
-        CompletableFuture.runAsync(() -> {
-        });
-
-
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName());
     }
 
-    static String queryHistoryAndUpdateCheck(String check) {
-        if ("2".equals(check)) {
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    @Test
+    public void supersync() {
+        List list = new ArrayList();
+        for (int i = 0; i < 5; i++) {
+            CompletableFuture future = CompletableFuture.supplyAsync(() -> {
+                System.out.println(Thread.currentThread().getName());
+                return "result";
+            }).whenComplete((r, t) ->
+                    list.add(r)
+            );
+
         }
-        System.out.println(check+Thread.currentThread().getName());
-        return check;
+        list.forEach(System.out::println);
     }
 }

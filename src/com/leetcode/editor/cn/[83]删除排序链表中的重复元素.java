@@ -36,7 +36,13 @@ package com.leetcode.editor.cn;
 class RemoveDuplicatesFromSortedList {
     public static void main(String[] args) {
         Solution solution = new RemoveDuplicatesFromSortedList().new Solution();
-        System.out.println(solution.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
+        ListNode node = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode result = solution.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3))))));
+        while (result != null) {
+            System.out.println(result.val);
+            result = result.next;
+        }
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 
