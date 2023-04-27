@@ -32,3 +32,22 @@ public class Singleton {
         return singleton2;
     }
 }
+/**
+ * 双重检查创建单例
+ */
+class Singleton3 {
+    private static Singleton3 singleton3;
+    private Singleton3(){
+    }
+    public static Singleton3 getSingleton() {
+        if (singleton3 == null) {
+            synchronized (Singleton3.class) {
+                if(singleton3==null){
+                    singleton3 = new Singleton3();
+
+                }
+            }
+        }
+        return singleton3;
+    }
+}

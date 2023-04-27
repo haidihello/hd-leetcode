@@ -1,6 +1,9 @@
 package com.leetcode.editor.juc;
 
 
+import org.junit.Test;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * 使用两个线程分别打印1-100
@@ -37,6 +40,23 @@ public class ThreadPrint {
         Thread t2 = new Thread(test1);
         t1.start();
         t2.start();
+
+    }
+    @Test
+    public void print(){
+
+        for ( int i = 0; i <100 ; i++) {
+            if (i % 2 == 0) {
+                int finalI = i;
+               CompletableFuture completableFuture =  CompletableFuture.runAsync(() -> {
+                    System.out.println(Thread.currentThread().getName() + finalI);
+                });
+                completableFuture.join();
+            } else {
+                System.out.println(Thread.currentThread().getName() + i);
+            }
+
+        }
 
     }
 }

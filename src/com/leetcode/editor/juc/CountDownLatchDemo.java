@@ -1,5 +1,7 @@
 package com.leetcode.editor.juc;
 
+import org.junit.Test;
+
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -43,5 +45,12 @@ public class CountDownLatchDemo {
         }
         System.out.println("比赛结果宣布！");
         service.shutdown();
+    }
+
+    @Test
+    public void countDown(){
+        ExecutorService executorService =  Executors.newFixedThreadPool(5);
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+
     }
 }
