@@ -28,4 +28,5 @@ public class ThreadTest {
         t2.join();
         System.out.println((System.nanoTime() - start) / 100_0000);
     }
+
 }

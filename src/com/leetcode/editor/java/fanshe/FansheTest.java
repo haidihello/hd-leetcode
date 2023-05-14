@@ -8,6 +8,8 @@ public class FansheTest {
     public static void main(String[] args) throws ClassNotFoundException {
         Class object = Class.forName("FansheTest.Dog");
         Object[] a = object.getFields();
+        //反射
+
 
     }
    static class Dog {
