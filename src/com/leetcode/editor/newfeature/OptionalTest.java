@@ -14,7 +14,7 @@ import java.util.*;
  * @Author: HaiDi
  * @Date: 2022/7/29 15:17
  */
-public class OptionalTest {
+public class    OptionalTest {
     private Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
 

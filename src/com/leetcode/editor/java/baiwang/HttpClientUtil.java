@@ -186,6 +186,9 @@ public class HttpClientUtil
 		{
 			// 创建Http Post请求
 			HttpPost httpPost = new HttpPost(url);
+//
+//			httpPost.setHeader("k-real-ip", "192.168.126.13");
+//			httpPost.setHeader("z-real-ip", "192.168.126.110");
 			HttpEntity entity = ("".equals(json)) ? new StringEntity(json, ContentType.APPLICATION_FORM_URLENCODED) : new StringEntity(json, ContentType.APPLICATION_JSON);
 			httpPost.setEntity(entity);
 
