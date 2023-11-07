@@ -181,6 +181,8 @@ public class FinanceHttpClient {
     public JSONObject executePostJson(String url, String json) {
         String result = HttpClientUtil.doPostJson(url,json);
         JSONObject resultObj = JSON.parseObject(result);
+        System.err.println("开放平台返回结果 \n" +resultObj);
+
         //接口报错处理
         if(resultObj.containsKey("errorResponse")){
             System.err.println("交易异常：请求url \n" +url);
@@ -207,6 +209,7 @@ public class FinanceHttpClient {
      */
     private String signTopRequest(Map<String, String> params, String secret, String body) throws IOException
     {
+
         // 第一步：检查参数是否已经排序
         ArrayList<String> keys = new ArrayList<String>(params.keySet());
         Collections.sort(keys);
@@ -237,6 +240,8 @@ public class FinanceHttpClient {
         {
             e.printStackTrace();
         }
+        System.out.println("加签前参数："+query);
+
         bytes = md5.digest(query.toString().getBytes("UTF-8"));
         // 第四步：把二进制转化为大写的十六进制
         StringBuilder sign = new StringBuilder();
