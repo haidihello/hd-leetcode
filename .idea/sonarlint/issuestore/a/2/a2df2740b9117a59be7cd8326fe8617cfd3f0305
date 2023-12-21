@@ -1,0 +1,34 @@
+
+J
+java:S3740G"/Provide the parametrized type for this generic.(œ÷ÀÕùÿÿÿÿ
+J
+java:S3740K"/Provide the parametrized type for this generic.(ï”­Ûþÿÿÿÿ
+J
+java:S3740K"/Provide the parametrized type for this generic.(ï”­Ûþÿÿÿÿ
+]
+java:S1192"GDefine a constant instead of duplicating this literal "female" 3 times.(Ôà‰–
+_
+java:S18542"DRemove this useless assignment to local variable "studentsOptional".(á‘¸ƒýÿÿÿÿ
+R
+java:S1854)"<Remove this useless assignment to local variable "optional".(Ñ¬ÚÛ
+R
+java:S1854$"<Remove this useless assignment to local variable "personal".(à˜ÁŒ
+Q	java:S125'"<This block of commented-out lines of code should be removed.(ý¼ì©
+C
+java:S1481)"-Remove this unused "optional" local variable.(Ñ¬ÚÛ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ
+S	java:S1060"9Replace this use of System.out or System.err by a logger.(ÀÏ°ýÿÿÿÿ
+P
+java:S14812"5Remove this unused "studentsOptional" local variable.(á‘¸ƒýÿÿÿÿ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(¤‰‰ûÿÿÿÿ
+M	java:S106:"9Replace this use of System.out or System.err by a logger.(Äþ!
+S
+java:S1854K"8Remove this useless assignment to local variable "list".(ï”­Ûþÿÿÿÿ
+Y
+java:S1854G">Remove this useless assignment to local variable "recordList".(œ÷ÀÕùÿÿÿÿ
+J
+java:S1481G"/Remove this unused "recordList" local variable.(œ÷ÀÕùÿÿÿÿ
+D
+java:S1481K")Remove this unused "list" local variable.(ï”­Ûþÿÿÿÿ
+L
+java:S1128"6Remove this unused import 'com.google.gson.JsonArray'.(ÎöêŠ

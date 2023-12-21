@@ -1,0 +1,31 @@
+
+K
+java:S3740Û"/Provide the parametrized type for this generic.(ìˆËäüÿÿÿÿ
+F
+java:S3740İ"/Provide the parametrized type for this generic.(ÊûäÍ
+s	java:S135?"YReduce the total number of break and continue statements in this loop to use at most one.(»á‡Øÿÿÿÿÿ
+t	java:S135”"YReduce the total number of break and continue statements in this loop to use at most one.(¿»äˆıÿÿÿÿ
+ƒ
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ÏÀ›Ş
+P
+java:S11416"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+a
+java:S2095"JUse try-with-resources or close this "HSSFWorkbook" in a "finally" clause.(Ëşµ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ßñ‚Ü
+:
+java:S1168$"$Return an empty map instead of null.(¥¹ï
+g
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(æ§Ïu
+:
+java:S11681"$Return an empty map instead of null.(¥¹ï
+Y
+java:S1155s">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ
+i
+java:S3776†"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(†ˆÛ
+;
+java:S1168Š"$Return an empty map instead of null.(¥¹ï
+Z
+java:S1155È">Use isEmpty() to check whether the collection is empty or not.(É€°Îøÿÿÿÿ
+B
+java:S1168æ"+Return an empty collection instead of null.(¥¹ï

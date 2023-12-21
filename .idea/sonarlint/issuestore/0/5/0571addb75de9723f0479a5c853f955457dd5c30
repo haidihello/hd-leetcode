@@ -1,0 +1,30 @@
+
+[	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(¢À­Û
+[	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(È»îö
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(–¢ƒ
+t
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(ùÁ”ıÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(©Æáıÿÿÿÿ
+V	java:S125
+"<This block of commented-out lines of code should be removed.(àË¬ßıÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ÎŠıÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Ííµ¶úÿÿÿÿ
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(ã£¨Ùüÿÿÿÿ
+I
+java:S2201<".The return value of "replaceAll" must be used.(Âåïüÿÿÿÿ
+c
+java:S5361<"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Âåïüÿÿÿÿ
+I
+java:S2201=".The return value of "replaceAll" must be used.(±„øıÿÿÿÿ
+c
+java:S5361="HReplace this call to "replaceAll()" by a call to the "replace()" method.(±„øıÿÿÿÿ
+D
+java:S2201>".The return value of "replaceAll" must be used.(¨Üœ£
+^
+java:S5361>"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¨Üœ£
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(ú¸„ûÿÿÿÿ
+O
+java:S4719M"9Replace charset name argument with StandardCharsets.UTF_8(Òıôş
+=
+java:S1125["(Remove the unnecessary boolean literals.(¢ëĞ

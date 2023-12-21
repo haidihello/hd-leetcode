@@ -1,0 +1,21 @@
+
+e
+java:S1104"OMake val a static final constant or non-public and provide accessors if needed.(Ô¸úÏ
+k
+java:S1104"PMake next a static final constant or non-public and provide accessors if needed.(±±èÃøÿÿÿÿ
+k
+java:S1104"PMake head a static final constant or non-public and provide accessors if needed.(²åŽóÿÿÿÿÿ
+}
+java:S4165"bRemove this useless assignment; "next" already holds the assigned value along all execution paths.(Œ¦ãßþÿÿÿÿ
+@
+java:S1172"*Remove this unused method parameter "val".(À®Íî
+N
+java:S1854)"9Remove this useless assignment to local variable "node2".(¬³¿S
+O
+java:S1854("9Remove this useless assignment to local variable "node1".(äæð§
+@
+java:S1481("*Remove this unused "node1" local variable.(äæð§
+?
+java:S1481)"*Remove this unused "node2" local variable.(¬³¿S
+J
+java:S1656"/Remove or correct this useless self-assignment.(Œ¦ãßþÿÿÿÿ

@@ -1,0 +1,31 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(ÊûäÍ
+E
+java:S3740E"/Provide the parametrized type for this generic.(Ìà¢î
+E
+java:S3740T"/Provide the parametrized type for this generic.(š‘Òø
+s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(®éüüÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(œû¿Ø
+E
+java:S1481"*Remove this unused "start" local variable.(£ÎÊÙÿÿÿÿÿ
+\
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(âë—¶øÿÿÿÿ
+?
+java:S1481")Remove this unused "list" local variable.(ÊûäÍ
+O
+java:S18747"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(è¥¹›
+m
+java:S3776?"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ãúüÿÿÿÿ
+V	java:S125A"<This block of commented-out lines of code should be removed.(–ıãÙùÿÿÿÿ
+]
+java:S3252E"GUse static access with "com.alibaba.excel.EasyExcelFactory" for "read".(Ìà¢î
+S	java:S106O"9Replace this use of System.out or System.err by a logger.(©½õıÿÿÿÿ
+S	java:S106r"9Replace this use of System.out or System.err by a logger.(èñ¸†úÿÿÿÿ
+J
+java:S2864t"4Iterate over the "entrySet" instead of the "keySet".(æ£‚ì
+Q	java:S125w"<This block of commented-out lines of code should be removed.(Êû÷
+_
+java:S1128"IRemove this unused import 'org.apache.commons.collections.map.HashedMap'.(Œ¾’ş

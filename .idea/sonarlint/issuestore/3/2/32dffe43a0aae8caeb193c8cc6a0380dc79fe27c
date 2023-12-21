@@ -1,0 +1,44 @@
+
+a	java:S112Õ"FDefine and throw a dedicated exception instead of using a generic one.(ééÿûÿÿÿÿ
+a	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(×Ç«¯üÿÿÿÿ
+b
+java:S1192Š"FDefine a constant instead of duplicating this literal "utf-8" 3 times.(‰ÊË ùÿÿÿÿ
+]
+java:S2259—"FA "NullPointerException" could be thrown; "response" is nullable here.(Âì“¡
+g
+java:S20956"QUse try-with-resources or close this "CloseableHttpClient" in a "finally" clause.(™ıÄ“
+f
+java:S2095ë"OUse try-with-resources or close this "DefaultHttpClient" in a "finally" clause.(è—ÄŒ
+g
+java:S2095z"QUse try-with-resources or close this "CloseableHttpClient" in a "finally" clause.(ıê”Ê
+m
+java:S2095É"QUse try-with-resources or close this "CloseableHttpClient" in a "finally" clause.(‘ÁÄĞüÿÿÿÿ
+P
+java:S1118)":Add a private constructor to hide the implicit public one.(óæïé
+J
+java:S2864@"4Iterate over the "entrySet" instead of the "keySet".(â÷Û
+K
+java:S2864…"4Iterate over the "entrySet" instead of the "keySet".(â÷Û
+Q	java:S125¾"<This block of commented-out lines of code should be removed.(Éøœ
+P
+java:S1874ë"9Remove this use of "DefaultHttpClient"; it is deprecated.(è—ÄŒ
+
+java:S1186ğ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÇçÌüÿÿÿÿ
+
+java:S1186ô"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÍÃüÿÿÿÿ
+\
+java:S4830ğ"@Enable server certificate validation on this SSL/TLS connection.(ÇçÌüÿÿÿÿ
+\
+java:S4830ô"@Enable server certificate validation on this SSL/TLS connection.(ÍÃüÿÿÿÿ
+=
+java:S1168ú"&Return an empty array instead of null.(¥¹ï
+T
+java:S1874ÿ"8Remove this use of "SSLSocketFactory"; it is deprecated.(Ğ‚ÛÎøÿÿÿÿ
+T
+java:S1874ÿ"8Remove this use of "SSLSocketFactory"; it is deprecated.(Ğ‚ÛÎøÿÿÿÿ
+T
+java:S1874€"8Remove this use of "SSLSocketFactory"; it is deprecated.(Å…Û„ıÿÿÿÿ
+S
+java:S1874"<Remove this use of "getConnectionManager"; it is deprecated.(ªü÷Ï
+E
+java:S1874".Remove this use of "Scheme"; it is deprecated.(ªü÷Ï

@@ -3,6 +3,28 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1087]花括号展开.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[1087]花括号展开.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1087" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[1087]花括号展开.java" />
+              <option name="titleSlug" value="brace-expansion" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[160]相交链表.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[160]相交链表.md" />
+              <option name="frontendQuestionId" value="leetcode.cn160" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[160]相交链表.java" />
+              <option name="titleSlug" value="intersection-of-two-linked-lists" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[9]回文数.java">
           <value>
             <LeetcodeEditor>
@@ -50,10 +72,10 @@
         <entry key="$PROJECT_DIR$/src/com/leetcode/editor/cn/[160]相交链表.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/doc/content/[160]相交链表.md" />
+              <option name="contentPath" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/doc/content/[160]相交链表.md" />
               <option name="frontendQuestionId" value="leetcode.cn160" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/src/com/leetcode/editor/cn/[160]相交链表.java" />
+              <option name="path" value="$USER_HOME$/AppData/Local/Temp/leetcode/editor/cn/[160]相交链表.java" />
               <option name="titleSlug" value="intersection-of-two-linked-lists" />
             </LeetcodeEditor>
           </value>

@@ -1,0 +1,81 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(ÊûäÍ
+E
+java:S37403"/Provide the parametrized type for this generic.(† òİ
+E
+java:S37403"/Provide the parametrized type for this generic.(† òİ
+E
+java:S3740V"/Provide the parametrized type for this generic.(† òİ
+E
+java:S3740V"/Provide the parametrized type for this generic.(† òİ
+F
+java:S3740ˆ"/Provide the parametrized type for this generic.(† òİ
+F
+java:S3740ˆ"/Provide the parametrized type for this generic.(† òİ
+E
+java:S3740¦"/Provide the parametrized type for this generic.(È«€l
+F
+java:S3740¯"/Provide the parametrized type for this generic.(† òİ
+F
+java:S3740¯"/Provide the parametrized type for this generic.(† òİ
+F
+java:S3740Ø"/Provide the parametrized type for this generic.(Éİ©½
+a
+java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 5 times.(®°Æ€şÿÿÿÿ
+s	java:S135Y"YReduce the total number of break and continue statements in this loop to use at most one.(Éø³ùÿÿÿÿ
+t	java:S135²"YReduce the total number of break and continue statements in this loop to use at most one.(Éø³ùÿÿÿÿ
+t	java:S135Ú"YReduce the total number of break and continue statements in this loop to use at most one.(¤‚ù±ûÿÿÿÿ
+^
+java:S2095Ó"GUse try-with-resources or close this "CSVWriter" in a "finally" clause.(¶ÅàÄ
+^
+java:S2095Ñ"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(ô¿ı¢
+d
+java:S3824á"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(ü¼´¸øÿÿÿÿ
+d
+java:S3824ì"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(ü¼´¸øÿÿÿÿ
+t
+java:S4144ƒ"]Update this method so that its implementation is not identical to "readFileToSQL" on line 46.(ªøĞ…
+W
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(î¤‚
+O
+java:S1874#"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(÷Ì«öùÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(Òğıøÿÿÿÿ
+W
+java:S10750"ARefactor your code to get this URI from a customizable parameter.(µÉ¹˜
+@
+java:S34572"%String contains no format specifiers.(Ã¥Ô•ûÿÿÿÿ
+O
+java:S1874I"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+\
+java:S1075S"ARefactor your code to get this URI from a customizable parameter.(·¤Şùıÿÿÿÿ
+;
+java:S3457U"%String contains no format specifiers.(ô« ¢
+O
+java:S1874p"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+M	java:S106|"9Replace this use of System.out or System.err by a logger.(ƒÚáB
+X
+java:S1075…"ARefactor your code to get this URI from a customizable parameter.(µÉ¹˜
+A
+java:S3457‡"%String contains no format specifiers.(Ã¥Ô•ûÿÿÿÿ
+P
+java:S1874"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+N
+java:S1854¦"8Remove this useless assignment to local variable "list".(È«€l
+ˆ
+java:S1130£"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(­ùÿŠûÿÿÿÿ
+X
+java:S1075¤"ARefactor your code to get this URI from a customizable parameter.(Ü¹†—
+?
+java:S1481¦")Remove this unused "list" local variable.(È«€l
+]
+java:S1075¬"ARefactor your code to get this URI from a customizable parameter.(·¤Şùıÿÿÿÿ
+<
+java:S3457®"%String contains no format specifiers.(ô« ¢
+P
+java:S1874Å"4Remove this use of "closeQuietly"; it is deprecated.(€ù§‰üÿÿÿÿ
+]
+java:S1075Î"ARefactor your code to get this URI from a customizable parameter.(ÍÕ€ùÿÿÿÿ
+X
+java:S1075Ï"ARefactor your code to get this URI from a customizable parameter.(¾Ç´ù

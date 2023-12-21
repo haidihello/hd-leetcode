@@ -12,7 +12,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -157,16 +159,74 @@ public class Open {
     @Test
     public void single(){
         Map param = new HashMap();
-        param.put("orgNo", "4b9f82fa3273f1b94a96");
-        param.put("taxNo", "91420102MA4K39R136");
-        param.put("creditCode", "91420102MA4K39R136");
+        param.put("orgNo", "44ad8fcde176b454636e");
+        Map inMap = new HashMap();
+        inMap.put("billingDate", "2022-11-23");
+        inMap.put("totalAmount", "130.74");
+        inMap.put("invoiceNumber", "55663678");
+        inMap.put("invoiceCode", "011002200411");
+        inMap.put("checkCode", "274466");
+        param.put("invoice", inMap );
 
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.invoiceCheckv2";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("VIN码监控："+url);
-        System.out.println("VIN码监控："+body);
+        System.out.println("调用生产核验："+url);
+        System.out.println("调用生产核验："+body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("VIN码监控返回："+jsonObject.toJSONString());
+        System.out.println("调用生产核验："+jsonObject.toJSONString());
+    }
+    /**
+     * 价税指数 分页查询
+     */
+    @Test
+    public void priceIndex() {
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("invoiceMonth", "202307");
+        param.put("userSign", "123445");
+        param.put("pageNum", 1);
+        param.put("pageSize", 2);
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.vehicle.carAssoQueryPriceIndex";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("查询税局状态url："+url);
+        System.out.println("查询税局状态body："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("查询税局状态："+jsonObject.toJSONString());
+    }
+
+    @Test
+    public void xwCreditresult() {
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("taxNo", "91450900697633085P");
+        param.put("creditCode", "91450900697633085P");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.report.xwCreditReport";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("查询税局状态url："+url);
+        System.out.println("查询税局状态body："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("查询税局状态："+jsonObject.toJSONString());
+    }
+    @Test
+    public void checkV4() {
+        Map newMap = new HashMap();
+        newMap.put("billingDate","2022-11-23");
+        newMap.put("totalAmount","259.81");
+        newMap.put("invoiceNumber","55663678");
+        newMap.put("invoiceCode","011002200411");
+        newMap.put("checkCode","474466");
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("invoice",newMap);
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.invoiceCheckv4";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
     }
 }

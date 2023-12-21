@@ -1,0 +1,8 @@
+
+|
+java:S1488="aImmediately return this expression instead of assigning it to the temporary variable "reqString".(ç¥ò³úÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‰ØÇ¿
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(²ãé
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ïîòĞşÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¾­îïüÿÿÿÿ
