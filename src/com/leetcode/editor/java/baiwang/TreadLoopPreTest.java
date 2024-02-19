@@ -2,6 +2,7 @@ package com.leetcode.editor.java.baiwang;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -29,9 +30,9 @@ public class TreadLoopPreTest {
 
     public static void main(String[] args) {
         Map param = new HashMap();
-        param.put("orgNo", "493b8ba68cda90020a57");
-        param.put("taxNo", "911101121024510215");
-        param.put("creditCode", "911101121024510215");
+        param.put("orgNo", "4612b191ca67e9ecc816");
+        param.put("taxNo", "91500000MA60394H37");
+        param.put("creditCode", "91500000MA60394H37");
 //        param.put("orgNo", "4b9f82fa3273f1b94a96");
 //        param.put("taxNo", "91420102MA4K39R136");
 //        param.put("creditCode", "91420102MA4K39R136");
@@ -85,4 +86,18 @@ public class TreadLoopPreTest {
 
 
     }
+    @Test
+    public void abnoramlPagef() {
+        String a = "1";
+        if (StringUtils.isNotBlank(a)) {
+            System.out.println(1);
+        } else if ("1".equals(a)) {
+            System.out.println(2);
+        } else {
+            System.out.println(3);
+        }
+
+    }
+
+
 }

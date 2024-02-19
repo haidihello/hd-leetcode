@@ -62,9 +62,9 @@ public class Open {
     @Test
     public void invoiceCheck(){
         Map param = new HashMap();
-        param.put("orgNo", "4b9f82fa3273f1b94a96");
-        param.put("taxNo", "91420102MA4K39R136");
-        param.put("creditCode", "91420102MA4K39R136");
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("taxNo", "91440604325112561B");
+        param.put("creditCode", "91440604325112561B");
 
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.report.tradeLoopReport";
@@ -183,7 +183,7 @@ public class Open {
     public void priceIndex() {
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
-        param.put("invoiceMonth", "202307");
+        param.put("invoiceMonth", "202310");
         param.put("userSign", "123445");
         param.put("pageNum", 1);
         param.put("pageSize", 2);
@@ -218,6 +218,28 @@ public class Open {
         newMap.put("invoiceNumber","55663678");
         newMap.put("invoiceCode","011002200411");
         newMap.put("checkCode","474466");
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("invoice",newMap);
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.invoiceCheckv4";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
+    }
+
+    /**
+     * 全电发票
+     */
+    @Test
+    public void checkV4alldian() {
+        Map newMap = new HashMap();
+        newMap.put("billingDate","2023-12-05");
+        newMap.put("totalAmount","873282.63");
+        newMap.put("invoiceNumber","23332000000068236285");
+        newMap.put("invoiceCode","");
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
         param.put("invoice",newMap);

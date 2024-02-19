@@ -268,4 +268,25 @@ public class ThreadLoopTest {
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
         System.out.println("资产核验："+jsonObject.toJSONString());
     }
+    @Test
+    public void checkV4temp() {
+        Map newMap = new HashMap();
+        newMap.put("billingDate","2023-02-13");
+        newMap.put("totalAmount","57.00");
+        newMap.put("invoiceNumber","20163899");
+        newMap.put("invoiceCode","037002200311");
+        newMap.put("checkCode","535092");
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("invoice",newMap);
+
+
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.invoiceCheckv4";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
+    }
 }
