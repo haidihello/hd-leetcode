@@ -251,4 +251,23 @@ public class Open {
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
         System.out.println("资产核验："+jsonObject.toJSONString());
     }
+    @Test
+    public void creatReport() {
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("taxNo", "91420102MA4K39R136");
+        param.put("creditCode", "91420102MA4K39R136");
+        param.put("reportType", "winLending.finance.report.tradeLoopReport");
+        param.put("serialNo", System.currentTimeMillis());
+
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.notify.createReport";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("关联交易求环："+url);
+        System.out.println("关联交易求环："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("关联交易求环："+jsonObject.toJSONString());
+
+
+    }
 }

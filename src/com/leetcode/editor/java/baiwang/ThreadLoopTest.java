@@ -103,8 +103,8 @@ public class ThreadLoopTest {
 
         // 设置请求头
         conn.setRequestProperty("Content-Type", "application/json");
-        conn.setRequestProperty("k-real-ip", "192.168.126.13");
-        conn.setRequestProperty("z-real-ip", "127.0.0.1");
+//        conn.setRequestProperty("k-real-ip", "192.168.126.13");
+//        conn.setRequestProperty("z-real-ip", "127.0.0.1");
 
         // 请求体内容
         String requestBody = body;
@@ -131,8 +131,8 @@ public class ThreadLoopTest {
 
         // 打印响应内容
         System.out.println("Response: " + response.toString());
-//        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-//        System.out.println("统一信用报告："+jsonObject.toJSONString());
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("统一信用报告："+jsonObject.toJSONString());
 
     }
     /**

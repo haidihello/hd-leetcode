@@ -257,5 +257,30 @@ public class FinanceHttpClient {
         return sign.toString();
     }
 
+    /**
+     * 获取token请求URL
+     * 注：获取后，可发送HTTP请求获取token
+     * @return
+     */
+    public JSONObject authTokenNew()
+    {
+        Long time = System.currentTimeMillis();
+        StringBuilder sburl = new StringBuilder(url);
+        sburl.append("?method=baiwang.oauth.token");
+        sburl.append("&username="+userName);
+        sburl.append("&password="+password);
+        sburl.append("&client_id="+appKey);
+        sburl.append("&client_secret="+appSecret);
+        sburl.append("&grant_type=password");
+        sburl.append("&version="+version);
+        sburl.append("&timestamp="+time);
+        String tokenURL = sburl.toString();
+        System.out.println("token授权url："+tokenURL);
 
+        JSONObject param = new JSONObject();
+        param.put("username",userName);
+        JSONObject responseObj = executePostJson(tokenURL, param.toJSONString());
+        System.out.println("token 授权返回："+responseObj);
+        return responseObj;
+    }
 }
