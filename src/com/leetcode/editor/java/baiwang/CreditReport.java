@@ -1,7 +1,10 @@
 package com.leetcode.editor.java.baiwang;
 
+import cn.hutool.core.lang.UUID;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.leetcode.editor.java.baiwang.openplat.FinanceHttpClient;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +42,23 @@ public class CreditReport {
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
         System.out.println("关联交易求环："+jsonObject.toJSONString());
 
+    }
+
+    @Test
+    public void test() {
+        int i = 0;
+        do {
+            String url = "http://fintech-open.aliyun.yinshuitong.com/encryption/openApi/v2?channel=lhzx&uuid=" + UUID.randomUUID();
+            Map map = new HashMap();
+//        map.put("data", "");
+            String result = HttpClientUtil.doPostJson(url, map.toString());
+            System.out.println(result);
+            if (result.contains("time")) {
+                System.out.println("-------------");
+                System.out.println(result);
+                i = 1;
+            }
+        } while (i==0);
 
     }
 }

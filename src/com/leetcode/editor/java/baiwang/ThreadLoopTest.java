@@ -3,6 +3,7 @@ package com.leetcode.editor.java.baiwang;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.leetcode.editor.java.baiwang.openplat.FinanceHttpClient;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -10,7 +11,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -297,9 +297,8 @@ public class ThreadLoopTest {
     @Test
     public void querycheckV4temp() {
         Map param = new HashMap();
-        param.put("orgNo", "4b9f82fa3273f1b94a96");
-        param.put("batchNo", "457f818b9e7b3a9a27e0");
-
+        param.put("orgNo", "48d190565b0ffc37f27d");
+        param.put("batchNo", "43799390efb4d26ef495");
 
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.queryBatchCheckv4";
@@ -309,4 +308,46 @@ public class ThreadLoopTest {
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
         System.out.println("资产核验："+jsonObject.toJSONString());
     }
+    @Test
+    public void getAbnormalInvoicev2() {
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("batchNo", "457f818b9e7b3a9a27e0");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.getAbnormalInvoicev2";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
+    }
+
+    @Test
+    public void ocrTypeInvoiceAll() {
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("batchNo", "457f818b9e7b3a9a27e0");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.ocrTypeInvoiceAll";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
+    }
+
+    @Test
+    public void invoiceCheck1() {
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("batchNo", "457f818b9e7b3a9a27e0");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.queryBatchCheck";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("资产核验："+url);
+        System.out.println("资产核验："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("资产核验："+jsonObject.toJSONString());
+    }
+
 }

@@ -1,7 +1,8 @@
-package com.leetcode.editor.java.baiwang;
+package com.leetcode.editor.java.baiwang.openplat;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.leetcode.editor.java.baiwang.HttpClientUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;

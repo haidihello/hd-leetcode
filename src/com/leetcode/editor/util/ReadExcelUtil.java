@@ -20,10 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 public class ReadExcelUtil {
@@ -230,5 +227,19 @@ public class ReadExcelUtil {
             return null;
         }
     }
+    // 将图片文件转换为Base64字符串
+    public static String encodeImageToBase64(File imageFile) {
+        String base64Image = "";
+        try (FileInputStream fileInputStream = new FileInputStream(imageFile)) {
+            // 读取图片文件数据
+            byte[] imageBytes = new byte[(int) imageFile.length()];
+            fileInputStream.read(imageBytes);
 
+            // 将字节数组编码为Base64
+            base64Image = Base64.getEncoder().encodeToString(imageBytes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return base64Image;
+    }
 }

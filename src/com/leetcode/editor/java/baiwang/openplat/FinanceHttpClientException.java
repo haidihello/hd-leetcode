@@ -1,4 +1,4 @@
-package com.leetcode.editor.java.baiwang;
+package com.leetcode.editor.java.baiwang.openplat;
 
 /**
  * @author zhoutao

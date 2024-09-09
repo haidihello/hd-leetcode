@@ -277,4 +277,53 @@ public class ReadFile {
 //            writer.close();
 //            LineIterator.closeQuietly(it);
 //        }
+@Test
+public void readFileToCSVRedis() throws IOException {
+
+    String path = "D:\\test\\dump_memory.csv";
+    LineIterator it = FileUtils.lineIterator(new File(path), "UTF-8");
+    BufferedWriter writer = new BufferedWriter(new FileWriter(String.format("D:\\test\\dump_memory.txt")));
+    List list = new ArrayList();
+    try {
+        int i = 0;
+        while (it.hasNext()) {
+            String line = it.nextLine();
+            i++;
+            if (i == 1) {
+                continue;
+            }
+            String[] strArr = line.split(",");
+            String str = "insert into t_redis_rdb_2 set "
+                    + " database1 = " + "'" + strArr[0] + "'"
+                    ;
+            if (strArr.length>1) {
+                str = str + ",type=" + "'" + strArr[1]+ "'";
+            }
+            if (strArr.length>2) {
+                str = str + ",key1=" + "'" + strArr[2]+ "'";
+            }
+            if (strArr.length>3) {
+                str = str + ",size_in_bytes=" + "'" + strArr[3]+ "'";
+            }
+            if (strArr.length>4) {
+                str = str + ",encoding=" + "'" + strArr[4]+ "'";
+            }
+            if (strArr.length>5) {
+                str = str + ",num_elements=" + "'" + strArr[5]+ "'";
+            }
+            if (strArr.length>6) {
+                str = str + ",len_largest_element=" + "'" + strArr[6]+ "'";
+            }
+            if (strArr.length>7) {
+                str = str + ",expiry=" + "'" + strArr[7]+ "'";
+            }
+            str = str + ";";
+            writer.write(str + System.lineSeparator());
+            list.add(line);
+        }
+    } finally {
+        writer.close();
+        LineIterator.closeQuietly(it);
+    }
+}
     }
