@@ -1,36 +1,42 @@
 package com.leetcode.editor.java.baiwang.openplat;
 
 
+import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.leetcode.editor.java.baiwang.FileToBase64Converter;
+import com.leetcode.editor.java.baiwang.HttpClientUtil;
+import com.leetcode.editor.util.ReadExcelUtil;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.protocol.HTTP;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Files;
+import java.util.*;
 
 /**
  * 生产环境请求示例
+ *
  * @author HaiDi
  * @since 2023-07-07 14:26
  */
-public class Open {
+public class OpenPrd {
     /**
      * 接入参数  请填写实际测试参数
      */
 //    private static String url = "https://open.yinshuitong.com/api";
     private static String url = "https://open.yinshuitong.com/api";
-    private static String appKey="10000892";
-    private static String appSecret="7d7c6e14-3fe1-42db-8d93-a6539f8f7d4b";
-    private static String userName="27169189";
-    private static String password="a12345";
-    private static String orgNo="44ad8fcde176b454636e";
-    private static String version="3.0";
+    private static String appKey = "10000892";
+    private static String appSecret = "7d7c6e14-3fe1-42db-8d93-a6539f8f7d4b";
+    private static String userName = "27169189";
+    private static String password = "a12345";
+    private static String orgNo = "44ad8fcde176b454636e";
+    private static String version = "3.0";
     /**
      * 访问客户端 注意修改缓存处理
      */
@@ -44,20 +50,22 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.report.tradeLoopReport";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("关联交易求环："+url);
-        System.out.println("关联交易求环："+body);
+        System.out.println("关联交易求环：" + url);
+        System.out.println("关联交易求环：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("关联交易求环："+jsonObject.toJSONString());
+        System.out.println("关联交易求环：" + jsonObject.toJSONString());
 
 
     }
+
     /**
      * 发票核验接口 返回response对象
+     *
      * @param
      * @return
      */
     @Test
-    public void invoiceCheck(){
+    public void invoiceCheck() {
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
         param.put("taxNo", "91440604325112561B");
@@ -66,10 +74,10 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.report.tradeLoopReport";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("关联交易求环："+url);
-        System.out.println("关联交易求环："+body);
+        System.out.println("关联交易求环：" + url);
+        System.out.println("关联交易求环：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("关联交易求环："+jsonObject.toJSONString());
+        System.out.println("关联交易求环：" + jsonObject.toJSONString());
     }
 
     /**
@@ -86,8 +94,8 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.report.creditReport";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("统一信用报告："+url);
-        System.out.println("统一信用报告："+body);
+        System.out.println("统一信用报告：" + url);
+        System.out.println("统一信用报告：" + body);
         // 创建URL对象
         URL obj = new URL(url);
 
@@ -130,13 +138,15 @@ public class Open {
 //        System.out.println("统一信用报告："+jsonObject.toJSONString());
 
     }
+
     /**
      * 发票核验接口 返回response对象
+     *
      * @param
      * @return
      */
     @Test
-    public void VINmonitor(){
+    public void VINmonitor() {
         Map param = new HashMap();
         param.put("orgNo", "4b9f82fa3273f1b94a96");
         param.put("taxNo", "91420102MA4K39R136");
@@ -145,17 +155,17 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.vehicle.batchImportMonitorVin";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("VIN码监控："+url);
-        System.out.println("VIN码监控："+body);
+        System.out.println("VIN码监控：" + url);
+        System.out.println("VIN码监控：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("VIN码监控返回："+jsonObject.toJSONString());
+        System.out.println("VIN码监控返回：" + jsonObject.toJSONString());
     }
 
     /**
      * 单张核验
      */
     @Test
-    public void single(){
+    public void single() {
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
         Map inMap = new HashMap();
@@ -164,16 +174,17 @@ public class Open {
         inMap.put("invoiceNumber", "55663678");
         inMap.put("invoiceCode", "011002200411");
         inMap.put("checkCode", "274466");
-        param.put("invoice", inMap );
+        param.put("invoice", inMap);
 
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.invoiceCheckv2";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("调用生产核验："+url);
-        System.out.println("调用生产核验："+body);
+        System.out.println("调用生产核验：" + url);
+        System.out.println("调用生产核验：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("调用生产核验："+jsonObject.toJSONString());
+        System.out.println("调用生产核验：" + jsonObject.toJSONString());
     }
+
     /**
      * 价税指数 分页查询
      */
@@ -188,10 +199,10 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.vehicle.carAssoQueryPriceIndex";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("查询税局状态url："+url);
-        System.out.println("查询税局状态body："+body);
+        System.out.println("查询税局状态url：" + url);
+        System.out.println("查询税局状态body：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("查询税局状态："+jsonObject.toJSONString());
+        System.out.println("查询税局状态：" + jsonObject.toJSONString());
     }
 
     @Test
@@ -203,29 +214,30 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.report.xwCreditReport";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("查询税局状态url："+url);
-        System.out.println("查询税局状态body："+body);
+        System.out.println("查询税局状态url：" + url);
+        System.out.println("查询税局状态body：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("查询税局状态："+jsonObject.toJSONString());
+        System.out.println("查询税局状态：" + jsonObject.toJSONString());
     }
+
     @Test
     public void checkV4() {
         Map newMap = new HashMap();
-        newMap.put("billingDate","2022-11-23");
-        newMap.put("totalAmount","259.81");
-        newMap.put("invoiceNumber","55663678");
-        newMap.put("invoiceCode","011002200411");
-        newMap.put("checkCode","474466");
+        newMap.put("billingDate", "2022-11-23");
+        newMap.put("totalAmount", "259.81");
+        newMap.put("invoiceNumber", "55663678");
+        newMap.put("invoiceCode", "011002200411");
+        newMap.put("checkCode", "474466");
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
-        param.put("invoice",newMap);
+        param.put("invoice", newMap);
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.invoiceCheckv4";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("资产核验："+url);
-        System.out.println("资产核验："+body);
+        System.out.println("资产核验：" + url);
+        System.out.println("资产核验：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("资产核验："+jsonObject.toJSONString());
+        System.out.println("资产核验：" + jsonObject.toJSONString());
     }
 
     /**
@@ -234,21 +246,22 @@ public class Open {
     @Test
     public void checkV4alldian() {
         Map newMap = new HashMap();
-        newMap.put("billingDate","2023-12-05");
-        newMap.put("totalAmount","873282.63");
-        newMap.put("invoiceNumber","23332000000068236285");
-        newMap.put("invoiceCode","");
+        newMap.put("billingDate", "2023-12-05");
+        newMap.put("totalAmount", "873282.63");
+        newMap.put("invoiceNumber", "23332000000068236285");
+        newMap.put("invoiceCode", "");
         Map param = new HashMap();
         param.put("orgNo", "44ad8fcde176b454636e");
-        param.put("invoice",newMap);
+        param.put("invoice", newMap);
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.invoiceCheckv4";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("资产核验："+url);
-        System.out.println("资产核验："+body);
+        System.out.println("资产核验：" + url);
+        System.out.println("资产核验：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("资产核验："+jsonObject.toJSONString());
+        System.out.println("资产核验：" + jsonObject.toJSONString());
     }
+
     @Test
     public void creatReport() {
         Map param = new HashMap();
@@ -261,16 +274,16 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.notify.createReport";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("关联交易求环："+url);
-        System.out.println("关联交易求环："+body);
+        System.out.println("关联交易求环：" + url);
+        System.out.println("关联交易求环：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("关联交易求环："+jsonObject.toJSONString());
+        System.out.println("关联交易求环：" + jsonObject.toJSONString());
 
 
     }
 
     @Test
-    public void ocrcheckv4()  {
+    public void ocrcheckv4() {
         Map param = new HashMap();
         param.put("orgNo", "4b9f82fa3273f1b94a96");
         param.put("invoiceType", "");
@@ -278,11 +291,211 @@ public class Open {
         String body = JSON.toJSONString(param);
         String apiName = "winLending.finance.assets.ocrInvoiceCheckv4";
         String url = financeHttpClient.getAPIRequestURL(apiName, body);
-        System.out.println("关联交易求环："+url);
-        System.out.println("关联交易求环："+body);
+        System.out.println("关联交易求环：" + url);
+        System.out.println("关联交易求环：" + body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
-        System.out.println("关联交易求环："+jsonObject.toJSONString());
+        System.out.println("关联交易求环：" + jsonObject.toJSONString());
 
 
     }
+
+    /**
+     * 遍历本地文件夹并
+     */
+    @Test
+    public void tempOcrcheckv4() {
+        List<String> list = FileToBase64Converter.convertFilesToBase64();
+//        for (String s : list) {
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("invoiceType", "");
+//            param.put("invoiceImgData", s);
+        param.put("invoiceImgData", list.get(0));
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.ocrInvoiceCheckv4";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("请求url" + url);
+        System.out.println("请求体" + body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("返回值" + jsonObject.toJSONString());
+//        }
+
+
+    }
+
+    /**
+     * 调域名
+     */
+    @Test
+    public void ystempOcrcheckv4() throws InterruptedException {
+        List<String> list = FileToBase64Converter.convertFilesToBase64();
+        String url = "http://open.prd.yinshuitong.com/checkApi/api/serialNet/assets/ocrInvoiceCheck/v4";
+        int i = 0;
+        List<String> writeList = new ArrayList();
+        for (String s : list) {
+            Map param = new HashMap();
+            param.put("orgNo", "44ad8fcde176b454636e");
+            param.put("invoiceType", "");
+            param.put("invoiceImgData", s);
+            param.put("requestId", "20241028zhd");
+            String reqString = JSON.toJSONString(param);
+            String response = HttpRequest.post(url).body(reqString).timeout(60000).execute().body();
+            System.out.println(response);
+            JSONObject jsonObject = JSONObject.parseObject(response);
+            JSONObject data = jsonObject.getJSONObject("data");
+            Map param1 = new HashMap();
+            param1.put("invoiceCode", data.getString("invoiceCode"));
+            param1.put("invoiceNumber", data.getString("invoiceNumber"));
+            param1.put("billingDate", data.getString("billingDate"));
+            param1.put("totalAmount", data.getString("amountTax"));
+            if (StringUtils.isNotBlank(data.getString("checkCode"))) {
+                //截取后六位
+                String checkCode = data.getString("checkCode");
+                param1.put("checkCode", checkCode.substring(checkCode.length() - 6));
+            }
+            System.out.println(JSONObject.toJSONString(param1));
+            writeList.add(JSON.toJSONString(param1));
+            i++;
+            Thread.sleep(2000);
+        }
+        System.out.println("处理结束总数量：" + i);
+        writeToFile(writeList, "D:\\测试发票\\param.txt");
+
+
+    }
+
+    private static void writeToFile(List<String> list, String filePath) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (String line : list) {
+                writer.write(line);
+                writer.newLine(); // 添加换行符
+            }
+            System.out.println("Data written to file successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static int processDirectory(File dir) {
+        int count = 0;
+        File[] files = dir.listFiles((d, name) -> name.toLowerCase().endsWith(".jpg") ||
+                name.toLowerCase().endsWith(".png") ||
+                name.toLowerCase().endsWith(".jpeg") ||
+                name.toLowerCase().endsWith(".pdf"));
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    // 如果是子目录，递归调用
+                    count += processDirectory(file);
+                } else {
+                    // 处理文件并转换为 Base64
+                    String base64 = ReadExcelUtil.encodeImageToBase64(file); // 请确保该方法存在
+                    System.out.println("Converted: " + file.getName());
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    public void processDirectory(File dir, List<String> base64List) {
+        File[] files = dir.listFiles((d, name) -> name.toLowerCase().endsWith(".jpg") ||
+                name.toLowerCase().endsWith(".png") ||
+                name.toLowerCase().endsWith(".jpeg") ||
+                name.toLowerCase().endsWith(".pdf"));
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    // 递归处理子目录
+                    processDirectory(file, base64List);
+                } else {
+                    // 处理文件并转换为 Base64
+                    try {
+                        String base64 = ReadExcelUtil.encodeFileToBase64(file);
+                        base64List.add(base64);
+                        System.out.println("Converted: " + file.getName());
+                    } catch (IOException e) {
+                        System.err.println("Error converting file: " + file.getName());
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    //图片转base64
+    @Test
+    public void ocrcheckv4new() {
+
+        String directoryPath = "C:\\Users\\PC\\Desktop\\工作文档\\生产核验一批发票 2024-10-28\\测试发票";
+        File dir = new File(directoryPath);
+
+        List<String> base64List = new ArrayList<>();
+
+        if (dir.isDirectory()) {
+            processDirectory(dir, base64List);
+        } else {
+            System.out.println("The specified path is not a directory.");
+        }
+
+        // 输出每个文件的 Base64 编码
+        for (String base64 : base64List) {
+            System.out.println(base64);
+        }
+        System.out.println("Total files converted: " + base64List.size());
+//        File file = new File("C:\\Users\\PC\\Desktop\\temp\\【飞猪】订单5058861830812-机票款凭证 发票.pdf");
+//        String base64 = ReadExcelUtil.encodeImageToBase64(file);
+//        Map param = new HashMap();
+//        param.put("orgNo", "4b9f82fa3273f1b94a96");
+//        param.put("invoiceType", "");
+//        param.put("invoiceImgData", base64);
+//        String body = JSON.toJSONString(param);
+//        String apiName = "winLending.finance.assets.ocrInvoiceCheckv4";
+//        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+//        System.out.println("ocrcheckv4："+url);
+//        System.out.println("ocrcheckv4："+body);
+//        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+//        System.out.println("ocrcheckv4："+jsonObject.toJSONString());
+
+
+    }
+
+    @Test
+    public void readTxt() throws IOException, InterruptedException {
+        String path = "D:\\测试发票\\param.txt";
+        LineIterator it = FileUtils.lineIterator(new File(path), "UTF-8");
+        List<String> list = new ArrayList<>();
+        try {
+            while (it.hasNext()) {
+                String line = it.nextLine();
+                list.add(line);
+            }
+        } finally {
+            LineIterator.closeQuietly(it);
+        }
+//        System.out.println("list大小" + list.size());
+//        System.out.println("读取耗时：" + (System.currentTimeMillis() - start));
+        String url = "open.prd.yinshuitong.com/checkApi/api/serialNet/assets/invoiceCheck/v4";
+        int i = 1;
+        List<String> resultList = new ArrayList<>();
+        for (String s : list) {
+            Map param = new HashMap();
+            param.put("requestId", "1234567890");
+            param.put("orgNo", "44ad8fcde176b454636e");
+            param.put("invoice", JSON.parseObject(s));
+            String reqString = JSON.toJSONString(param);
+            long start = System.currentTimeMillis();
+            String response = HttpRequest.post(url).body(reqString).timeout(60000).execute().body();
+            String resultRes = "响应耗时:" + (System.currentTimeMillis() - start) + "ms 发票信息:" + s + " 响应结果:" + response;
+            resultList.add(resultRes);
+            System.out.println(resultRes);
+            i++;
+            Thread.sleep(100);
+        }
+        writeToFile(resultList,"D:\\测试发票\\193张发票核验返回结果及耗时.txt");
+    }
 }
+

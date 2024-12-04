@@ -206,6 +206,47 @@ public class TreadLoopPreTest {
 
 
     }
+    @Test
+    public void vatInvoice()  {
+        Map param = new HashMap();
+//        param.put("orgNo", "42c7af8736b3927abd27");
+        param.put("orgNo", "41838ba6c3bb256b6e33");
+        param.put("endDate","2024-11-13 10:59:59");
+        param.put("startDate","2024-11-13 10:00:00");
+        param.put("page",1);
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.invoice.vatInvoice";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("接口url："+url);
+        System.out.println("请求体："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("返回结果："+jsonObject.toJSONString());
+    }
+
+    /**
+     * 查询汽车发票
+     */
+    @Test
+    public void vehicleInvoice()  {
+        Map param = new HashMap();
+//        param.put("orgNo", "42c7af8736b3927abd27");
+//        param.put("endDate","2024-11-11 20:59:59");
+//        param.put("startDate","2024-11-11 20:00:00");
+//        param.put("orgNo", "41838ba6c3bb256b6e33");
+//        param.put("endDate","2024-11-13 10:59:59");
+//        param.put("startDate","2024-11-13 10:00:00");
+        param.put("orgNo", "44e499018cb8f68772f6");
+        param.put("endDate","2024-11-22 13:59:59");
+        param.put("startDate","2024-11-22 13:00:00");
+        param.put("page",1);
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.invoice.vehicleInvoice";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("接口url："+url);
+        System.out.println("请求体："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("返回结果："+jsonObject.toJSONString());
 
 
+    }
 }
