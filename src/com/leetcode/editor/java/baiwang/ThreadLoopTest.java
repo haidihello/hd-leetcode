@@ -76,6 +76,22 @@ public class ThreadLoopTest {
         System.out.println("关联交易求环："+jsonObject.toJSONString());
     }
 
+    @Test
+    public void gangResultReport(){
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("taxNo", "91110113MA01DFUN91");
+        param.put("creditCode", "91110113MA01DFUN91");
+
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.report.gangResultReport";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("关联交易团伙ID："+url);
+        System.out.println("关联交易团伙ID："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("关联交易团伙ID："+jsonObject.toJSONString());
+    }
+
     /**
      * 直连 finance-service 链路
      * 统一信用报告

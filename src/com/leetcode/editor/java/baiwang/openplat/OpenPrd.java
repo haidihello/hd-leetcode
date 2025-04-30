@@ -497,5 +497,22 @@ public class OpenPrd {
         }
         writeToFile(resultList,"D:\\测试发票\\193张发票核验返回结果及耗时.txt");
     }
+
+    @Test
+    public void download() {
+        Map param = new HashMap();
+        param.put("orgNo", "44ad8fcde176b454636e");
+        param.put("invoiceCode", "011001800304");
+        param.put("invoiceNumber", "04786930");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.downloadInvoice";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("发票下载："+url);
+        System.out.println("发票下载："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("发票下载："+jsonObject.toJSONString());
+
+
+    }
 }
 

@@ -326,4 +326,31 @@ public void readFileToCSVRedis() throws IOException {
         LineIterator.closeQuietly(it);
     }
 }
+    @Test
+    public void readFileToCSV5537() throws IOException {
+
+        String path = "D:\\5537原数据.csv";
+        LineIterator it = FileUtils.lineIterator(new File(path), "GB2312");
+        BufferedWriter writer = new BufferedWriter(new FileWriter(String.format("D:\\5537sql.txt")));
+        List list = new ArrayList();
+        try {
+            while (it.hasNext()) {
+                String line = it.nextLine();
+                String[] strArr = line.split(",");
+                String str =  strArr[0]+","+strArr[2]+","+strArr[3];
+                int startIndex = line.indexOf("WHERE");
+                int endIndex = line.indexOf(";", startIndex); // 从 WHERE 后开始找 ;
+                String whereClause = null;
+                if (startIndex != -1 && endIndex != -1) {
+                     whereClause = line.substring(startIndex, endIndex + 1); // 包含 ;
+                }
+                str = str + whereClause;
+                writer.write(str + System.lineSeparator());
+                list.add(line);
+            }
+        } finally {
+            writer.close();
+            LineIterator.closeQuietly(it);
+        }
+    }
     }

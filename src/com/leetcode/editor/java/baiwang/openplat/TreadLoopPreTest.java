@@ -1,7 +1,8 @@
-package com.leetcode.editor.java.baiwang;
+package com.leetcode.editor.java.baiwang.openplat;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
+import com.leetcode.editor.java.baiwang.HttpClientUtil;
 import com.leetcode.editor.java.baiwang.openplat.FinanceHttpClient;
 import com.leetcode.editor.java.baiwang.openplat.FinanceHttpClientException;
 import com.leetcode.editor.util.ReadExcelUtil;
@@ -246,6 +247,37 @@ public class TreadLoopPreTest {
         System.out.println("请求体："+body);
         JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
         System.out.println("返回结果："+jsonObject.toJSONString());
+
+
+    }
+    @Test
+    public void report(){
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("taxNo", "91111234567890UN91");
+        param.put("creditCode", "91111234567890UN91");
+
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.report.getCreditReportv1";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("信用报告："+url);
+        System.out.println("信用报告："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("信用报告："+jsonObject.toJSONString());
+    }
+    @Test
+    public void download() {
+        Map param = new HashMap();
+        param.put("orgNo", "4b9f82fa3273f1b94a96");
+        param.put("invoiceCode", "011001800304");
+        param.put("invoiceNumber", "04786930");
+        String body = JSON.toJSONString(param);
+        String apiName = "winLending.finance.assets.downloadInvoice";
+        String url = financeHttpClient.getAPIRequestURL(apiName, body);
+        System.out.println("发票下载："+url);
+        System.out.println("发票下载："+body);
+        JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+        System.out.println("发票下载："+jsonObject.toJSONString());
 
 
     }
