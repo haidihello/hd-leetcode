@@ -514,5 +514,28 @@ public class OpenPrd {
 
 
     }
+    @Test
+    public void vatInvoice()  {
+        Map param = new HashMap();
+//        param.put("orgNo", "42c7af8736b3927abd27");
+        param.put("orgNo", "4e57aeb2eb72f79b9cbc");
+        param.put("endDate","2025-05-14 09:14:55");
+        param.put("startDate","2025-05-14 09:13:34");
+        for (int i = 1; i < 100; i++) {
+            param.put("page", i);
+            String body = JSON.toJSONString(param);
+            String apiName = "winLending.finance.invoice.vatInvoice";
+            String url = financeHttpClient.getAPIRequestURL(apiName, body);
+            System.out.println("接口url："+url);
+            System.out.println("请求体："+body);
+            JSONObject jsonObject = financeHttpClient.executePostJson(url, body);
+            System.out.println("返回结果："+jsonObject);
+            System.out.println("返回结果json："+jsonObject.toJSONString());
+            if (jsonObject.isEmpty()) {
+                return;
+            }
+        }
+
+    }
 }
 
